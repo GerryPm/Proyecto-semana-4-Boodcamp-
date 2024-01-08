@@ -1,0 +1,26 @@
+// Datos del producto y cliente
+precio_original = 100
+cupon_descuento = 0.10
+iva = 0.12
+cantidad = 2
+peso_paquete = 3
+destino_envio = "Nueva York"
+costo_envio_fijo = 10
+costo_envio_por_kg = 2
+// Calcular descuento del cupón
+precio_con_descuento = precio_original * (1 - cupon_descuento)
+// Aplicar IVA
+precio_con_iva = precio_con_descuento * (1 + iva)
+// Aplicar descuento por cantidad
+precio_final = precio_con_iva * (1 - 0.05)
+// Calcular costo de envío
+costo_envio = costo_envio_fijo + (peso_paquete * costo_envio_por_kg)
+// Calcular costo final del producto
+costo_total = (precio_final * cantidad) + costo_envio
+// Mostrar resultados
+Mostrar("Costo final del producto: $" + costo_total)
+Mostrar("Desglose:")
+Mostrar("- Descuento: $" + (precio_original - precio_con_descuento))
+Mostrar("- Impuestos (IVA): $" + (precio_con_iva - precio_con_descuento))
+Mostrar("- Descuento por cantidad: $" + (precio_con_iva - precio_final))
+Mostrar("- Costo de envío: $" + costo_envio)
